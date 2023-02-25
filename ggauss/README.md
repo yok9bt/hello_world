@@ -2,5 +2,4 @@ Lottery game. You can set draw range, number of draw, and number of games. Outpu
 
 ![](picture.png)
 
-x axis - sum of drawed values
-y axis - how many time that sum occurs
+x axis - sum of drawed values, y axis - how many times that sum occurs
