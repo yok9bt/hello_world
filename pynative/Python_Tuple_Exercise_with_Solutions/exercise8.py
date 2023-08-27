@@ -1,6 +1,0 @@
-tuple1 = (('a', 23),('b', 37),('c', 11), ('d',29))
-print(tuple1)
-l1 = list(tuple1)
-l2 = sorted(l1, key=lambda x: x[1])
-tuple1 = tuple(l2)
-print(tuple1)
