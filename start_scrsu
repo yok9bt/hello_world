@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd /home/debian/hello_world/scrsu
+sleep 1
+kill `cat pid`
+sleep 1
+nohup ./scrsu > /dev/null 2>&1 &
+sleep 1
+echo $! > pid
+sleep 1
+

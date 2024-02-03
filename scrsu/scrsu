@@ -1,0 +1,12 @@
+#!/bin/bash
+#screenshot super
+
+while true
+do
+  data=`date +'%Y.%m.%d_%H:%M:%S'`
+  outputscrsu=`python3 scrsu.py`
+
+  printf "(%s) (%s)\n" $data $outputscrsu | tee -a log_scrsu
+  
+  sleep 10m
+done
