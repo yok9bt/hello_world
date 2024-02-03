@@ -48,5 +48,3 @@ while True:
         lin(20,90,18)
         #power(90)
 
-#pyautogui.moveTo(power_buttons_list[power])
-#pyautogui.click()
