@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd /home/debian/hello_world/easyhttp
+sleep 1
+kill `cat pid`
+sleep 1
+nohup bash -c 'python3 -u easyhttp.py' &
+sleep 1
+echo $! > pid
+sleep 1
+
