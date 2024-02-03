@@ -1,0 +1,4 @@
+#!/bin/bash
+tmp546765432=`xdotool search --onlyvisible --name opera`
+xdotool windowmove $tmp546765432 10 40
+xdotool windowsize $tmp546765432 2100 1380
