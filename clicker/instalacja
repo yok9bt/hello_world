@@ -1,0 +1,10 @@
+1. dodaj skrypt evtest do sudo
+sudo visudo
+
+dodaj to na końcu:
+adrian    ALL=(ALL)   NOPASSWD:   /home/adrian/hello_world/clicker/evtest.sh
+
+ctrl + o i enter żeby zapisać
+
+2. dodaj link symboliczny
+sudo ln -s /home/adrian/hello_world/clicker/5f8b_controler.py /usr/bin/5f8b
