@@ -4,6 +4,7 @@ import time
 import os
 import pynput
 
+alt_gr_fix = 65027
 flag1 = 0
 flag2 = 0
 flag4 = 0
@@ -27,15 +28,15 @@ def writeCharUp(char123):
     keyboard.release(pynput.keyboard.Key.shift)
 
 def writeCharAltGr(char123):
-    keyboard.press(pynput.keyboard.Key.alt_gr)
+    keyboard.press(pynput.keyboard.KeyCode(alt_gr_fix))
     keyboard.tap(pynput.keyboard.KeyCode(ord(char123)))
-    keyboard.release(pynput.keyboard.Key.alt_gr)
+    keyboard.release(pynput.keyboard.KeyCode(alt_gr_fix))
 
 def writeCharAltGrUp(char123):
     keyboard.press(pynput.keyboard.Key.shift)
-    keyboard.press(pynput.keyboard.Key.alt_gr)
+    keyboard.press(pynput.keyboard.KeyCode(alt_gr_fix))
     keyboard.tap(pynput.keyboard.KeyCode(ord(char123)))
-    keyboard.release(pynput.keyboard.Key.alt_gr)
+    keyboard.press(pynput.keyboard.KeyCode(alt_gr_fix))
     keyboard.release(pynput.keyboard.Key.shift)
 
 def sendSymbol(symbol):
