@@ -57,7 +57,7 @@ while True:
         i = getch()
         if i == r[0]:
             break
-        if i == " ":
+        if i == "$":
             exit()
         if i != r[0]:
             mistakeCount += 1

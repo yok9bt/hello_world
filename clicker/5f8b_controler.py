@@ -26,6 +26,18 @@ def writeCharUp(char123):
     keyboard.tap(pynput.keyboard.KeyCode(ord(char123)))
     keyboard.release(pynput.keyboard.Key.shift)
 
+def writeCharAltGr(char123):
+    keyboard.press(pynput.keyboard.Key.alt_gr)
+    keyboard.tap(pynput.keyboard.KeyCode(ord(char123)))
+    keyboard.release(pynput.keyboard.Key.alt_gr)
+
+def writeCharAltGrUp(char123):
+    keyboard.press(pynput.keyboard.Key.shift)
+    keyboard.press(pynput.keyboard.Key.alt_gr)
+    keyboard.tap(pynput.keyboard.KeyCode(ord(char123)))
+    keyboard.release(pynput.keyboard.Key.alt_gr)
+    keyboard.release(pynput.keyboard.Key.shift)
+
 def sendSymbol(symbol):
     print('<'+symbol+'>')
     if symbol == "00":
@@ -226,43 +238,43 @@ def sendSymbol(symbol):
     elif symbol == "5F":
         writeCharUp('7')
 ####
-    elif symbol == "60":
-        write('ł')
     elif symbol == "61":
-        write('ę')
+        writeCharAltGr("a")
     elif symbol == "62":
-        write('ę')
+        writeCharAltGr("l")
     elif symbol == "63":
-        write('ż')
-    elif symbol == "64":
-        write('ó')
+        writeCharAltGr("e")
     elif symbol == "65":
-        write("ś")
+        writeCharAltGr("o")
     elif symbol == "66":
-        write("ć")
+        writeCharAltGr("z")
     elif symbol == "67":
-        write("ń")
+        writeCharAltGr("n")
     elif symbol == "68":
-        write('ź')
+        writeCharAltGr("x")
+    elif symbol == "6A":
+        writeCharAltGr("s")
+    elif symbol == "6B":
+        writeCharAltGr("c")
 ####
-    elif symbol == "70":
-        write('Ł')
     elif symbol == "71":
-        write('Ę')
+        writeCharAltGrUp("a")
     elif symbol == "72":
-        write('Ą')
+        writeCharAltGrUp("l")
     elif symbol == "73":
-        write('Ż')
-    elif symbol == "74":
-        write('Ó')
+        writeCharAltGrUp("e")
     elif symbol == "75":
-        write("Ś")
+        writeCharAltGrUp("o")
     elif symbol == "76":
-        write('Ć')
+        writeCharAltGrUp("z")
     elif symbol == "77":
-        write("Ń")
+        writeCharAltGrUp("n")
     elif symbol == "78":
-        write('Ź')
+        writeCharAltGrUp("x")
+    elif symbol == "7A":
+        writeCharAltGrUp("s")
+    elif symbol == "7B":
+        writeCharAltGrUp("c")
 ####
     elif symbol == "80":
         write(pynput.keyboard.Key.enter)
@@ -297,6 +309,10 @@ def sendSymbol(symbol):
     elif symbol == "8F":
         writeChar('`')
 ####
+    elif symbol == "E0":
+        write(pynput.keyboard.Key.down)
+    elif symbol == "E1":
+        write(pynput.keyboard.Key.up)
     elif symbol == "ED":
         volCtrl()
     elif symbol == "EE":
