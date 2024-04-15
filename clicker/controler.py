@@ -457,6 +457,10 @@ def changeToKeyboard():
     global mouseActiveFlag
     global keyboardM2Flag
     global keyboardM1Flag
+    global mousePosition
+
+    mousePosition = mouse.position
+    mouse.position = (10000,10000)
 
     mouseActiveFlag = False
     keyboardM2Flag = False
@@ -466,12 +470,17 @@ def changeToMouse():
     global mouseActiveFlag
     global keyboardM2Flag
     global keyboardM1Flag
+    global mousePosition
+
+    mouse.position = mousePosition
 
     keyboardM1Flag = False
     keyboardM2Flag = True
     mouseActiveFlag = True
 
 # Program START
+mousePosition = None
+
 l = loadDeviceList()
 m,k = loadConfigFiles()
 mousePath, keyboardPath = findConfiguredDevices(m,k,l)
@@ -479,13 +488,13 @@ if not mousePath or not keyboardPath:
     print("no path to device, program exit")
     exit()
 
-mouseActiveFlag = False
-keyboardM1Flag = True
-keyboardM2Flag = False
+
 
 mouse = pynput.mouse.Controller()
 keyboard = pynput.keyboard.Controller()
 keyboard.release(pynput.keyboard.Key.enter)
+
+changeToKeyboard()
 
 # Mouse
 mouseThread = threading.Thread(target=readMouse)
